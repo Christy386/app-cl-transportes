@@ -4,7 +4,7 @@ import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function IconButton({Icon, text, navigateTo, navigation}){
     return(
-        <View>
+        <View style={{margin: 10}}>
             <TouchableHighlight
                 underlayColor="#DDDDDD"
                 onPress={() => navigation.navigate(navigateTo)}
@@ -20,14 +20,17 @@ export default function IconButton({Icon, text, navigateTo, navigation}){
 
 const styles = StyleSheet.create({
     button: {
-        borderRadius: 4,
+        borderRadius: 10,
         alignItems: 'center',
         backgroundColor: '#f1f3f4',
         padding: 10,
+        width: 100,
+        height: 120,
     },
     text: {
         color: '#616263',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        textAlign: 'center',
     }
     
   });

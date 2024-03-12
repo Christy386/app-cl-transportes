@@ -8,12 +8,36 @@ import IconButton from '../../components/iconButton';
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>:3</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+      <IconButton 
+        Icon = {MCIcons} 
+        text="Comprar passagem" 
+        navigateTo="BuyTicket" 
+        navigation={navigation}
       />
-      <IconButton Icon = {MCIcons} text="Comprar passagem" navigateTo="BuyTicket" navigation={navigation}/>
+      <IconButton 
+        Icon = {MCIcons} 
+        text="Comprar passagem" 
+        navigateTo="BuyTicket" 
+        navigation={navigation}
+      />
+      <IconButton 
+        Icon = {MCIcons} 
+        text="Comprar passagem" 
+        navigateTo="BuyTicket" 
+        navigation={navigation}
+      />
+      <IconButton 
+        Icon = {MCIcons} 
+        text="Comprar passagem" 
+        navigateTo="BuyTicket" 
+        navigation={navigation}
+      />
+      <IconButton 
+        Icon = {MCIcons} 
+        text="Comprar passagem" 
+        navigateTo="BuyTicket" 
+        navigation={navigation}
+      />
     </View>
   );
 }
@@ -22,7 +46,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'space-evenly',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
 });
