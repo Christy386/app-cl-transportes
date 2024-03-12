@@ -2,12 +2,12 @@ import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function IconButton({Icon, text, navigateTo}){
+export default function IconButton({Icon, text, navigateTo, navigation}){
     return(
         <View>
             <TouchableHighlight
                 underlayColor="#DDDDDD"
-                onPress={() => console.log(navigateTo)}
+                onPress={() => navigation.navigate(navigateTo)}
             >
                 <View style={styles.button}>
                     <Icon name={"bag-carry-on"} size={60} color="#9e9e9e" />
