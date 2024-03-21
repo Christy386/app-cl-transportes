@@ -87,7 +87,7 @@ export default function LoginScreen({ navigation }) {
         </TouchableOpacity>
       </View>
       <Text style={styles.registerText}>
-        <Text>No account yet?</Text>
+        No account yet? 
         <Text onPress={handleRegister} style={{color:"#00f", }}>Register here.</Text>
       </Text>
     </View>
