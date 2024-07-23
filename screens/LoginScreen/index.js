@@ -17,11 +17,11 @@ export default function LoginScreen({ navigation }) {
     if (username === 'client' && password === 'client'){
       navigation.navigate('Home');
     } else if(username === 'admin' && password === 'admin'){
-      //navigation.navigate('Admin');
+      navigation.navigate('Admin');
     } else {
       return;
     }
-    console.log('Remember Me:', rememberMe);
+    
   };
 
   const handleRegister = ()=>{

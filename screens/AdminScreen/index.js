@@ -15,7 +15,8 @@ export default function HomeScreen({ navigation }) {
           return(
             <IconButton 
             key={i}
-            Icon={buttonData.Icon}
+            IconFamily={buttonData.IconFamily}
+            IconName={buttonData.IconName}
             text={buttonData.text}
             navigateTo={buttonData.navigateTo}
             navigation={navigation}

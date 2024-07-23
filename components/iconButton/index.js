@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function IconButton({Icon, text, navigateTo, navigation}){
+export default function IconButton({IconFamily = MCIcons,IconName = "bag-carry-on", text, navigateTo, navigation}){
     return(
         <View style={{margin: 10}}>
             <TouchableHighlight
@@ -10,7 +10,8 @@ export default function IconButton({Icon, text, navigateTo, navigation}){
                 onPress={() => navigation.navigate(navigateTo)}
             >
                 <View style={styles.button}>
-                    <Icon name={"bag-carry-on"} size={60} color="#9e9e9e" />
+                    <IconFamily name={IconName} size={60} color="#9e9e9e" />
+                    
                     <Text style={styles.text}>{text}</Text>
                 </View>
             </TouchableHighlight>
@@ -31,6 +32,6 @@ const styles = StyleSheet.create({
         color: '#616263',
         fontWeight: 'bold',
         textAlign: 'center',
-    }
+    },
     
   });
