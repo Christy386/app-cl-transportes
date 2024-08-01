@@ -83,7 +83,19 @@ export default function LoginScreen({ navigation }) {
           <Text style={styles.checkboxText}>Keep me logged in</Text>
         </View>
         <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-          <Text style={{ color: '#fff', textAlign: 'center', fontSize:18, }}>Login</Text>
+          <Text style={{ color: '#fff', textAlign: 'center', fontSize:18, }}>
+            Login
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('Admin')}>
+          <Text style={{ color: '#fff', textAlign: 'center', fontSize:18, }}>
+            Admin Screen
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('Home')}>
+          <Text style={{ color: '#fff', textAlign: 'center', fontSize:18, }}>
+            Client Screen
+          </Text>
         </TouchableOpacity>
       </View>
       <Text style={styles.registerText}>
