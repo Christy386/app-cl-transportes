@@ -60,4 +60,10 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
       fontSize: 18,
     },
-  });
+      eyeIcon: {
+      position: 'absolute',
+      position: 'absolute',
+      right: 12,
+      top: 8,
+    },
+});

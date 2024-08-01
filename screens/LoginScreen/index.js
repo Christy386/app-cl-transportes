@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { View, TextInput, TouchableOpacity, Text, Image, Animated } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text, Animated } from 'react-native';
 import Checkbox from 'expo-checkbox';
 import { FontAwesome } from '@expo/vector-icons';
 
-import Logo from './../../assets/Logo.svg'
+import Logo from './../../assets/Logo.svg';
 import { styles } from './Styles';
 
 export default function LoginScreen({ navigation }) {
-  const [showIcon, setShowIcon] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
@@ -29,27 +29,8 @@ export default function LoginScreen({ navigation }) {
     //navigation.navigate('Register');
   };
 
-  const handleInputFocus = () => {
-    setShowIcon(true);
-    startIconAnimation();
-  };
-
-  const handleInputBlur = () => {
-    if (!username) {
-      setShowIcon(false);
-    }
-  };
-
   const handleInputChange = (text) => {
     setUsername(text);
-  };
-
-  const startIconAnimation = () => {
-    Animated.timing(iconAnimation, {
-      toValue: 1,
-      duration: 500,
-      useNativeDriver: false
-    }).start();
   };
 
   return (
@@ -60,24 +41,32 @@ export default function LoginScreen({ navigation }) {
         </View>
         <View style={styles.inputContainer}>
           <TextInput 
-            placeholder={showIcon ? "" : "Username"} 
+            placeholder={"Username"} 
             value={username} 
             onChangeText={handleInputChange} 
             style={styles.input} 
-            onFocus={handleInputFocus} 
-            onBlur={handleInputBlur}
           />
-          {showIcon && (
-            <Animated.View 
-              style={[styles.icon, { 
-                opacity: iconAnimation, 
-                transform: [{ translateX: iconAnimation.interpolate({ inputRange: [0, 1], outputRange: [50, 0] }) }] 
-              }]}>
-              <FontAwesome name="user-circle" size={24} color="#9e9e9e" />
-            </Animated.View>
-          )}
+          <FontAwesome style={styles.icon} name="user-circle" size={24} color="#9e9e9e" />
         </View>
-        <TextInput placeholder="Password" secureTextEntry={true} value={password} onChangeText={setPassword} style={styles.input} />
+        <View style={styles.inputContainer}>
+          <TextInput 
+            placeholder="Password" 
+            secureTextEntry={!showPassword} 
+            value={password} 
+            onChangeText={setPassword} 
+            style={[styles.input, { paddingRight: 40 }]} 
+          />
+          <TouchableOpacity 
+            style={styles.eyeIcon} 
+            onPress={() => setShowPassword(!showPassword)}
+          >
+            <FontAwesome 
+              name={showPassword ? "eye" : "eye-slash"} 
+              size={24} 
+              color="#9e9e9e" 
+            />
+          </TouchableOpacity>
+        </View>
         <View style={styles.checkboxContainer}>
           <Checkbox value={rememberMe} onValueChange={setRememberMe} tintColor="red"/>
           <Text style={styles.checkboxText}>Keep me logged in</Text>
@@ -88,7 +77,7 @@ export default function LoginScreen({ navigation }) {
       </View>
       <Text style={styles.registerText}>
         No account yet? 
-        <Text onPress={handleRegister} style={{color:"#00f", }}>Register here.</Text>
+        <Text onPress={handleRegister} style={{color:"#00f", }}> Register here.</Text>
       </Text>
     </View>
   );
