@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import Styles from './Styles';
+import Styles from './styles';
 
-const cities = ["Natal", "Mossoró", "Parnamirim", "São Gonçalo do Amarante", "Macau"];
+const cities = [
+  "Currais Novos", 
+  "São vicente", 
+  "Florânia", 
+  "Jucurutú",
+  "Campo Grande",
+  "Upanema", 
+  "Mossoró"
+];
 
 export default function BuyTicketScreen() {
   const anoAtual = new Date().getFullYear();

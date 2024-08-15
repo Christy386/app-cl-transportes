@@ -1,58 +1,61 @@
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import ADIcons from 'react-native-vector-icons/AntDesign';
+import FA5Icons from 'react-native-vector-icons/FontAwesome5';
+import MIIcons from 'react-native-vector-icons/MaterialIcons';
 
 export default data = [
-    {
-        Icon: MCIcons,
-        text: "Comprar passagem", 
+    {//primeira linha
+        IconFamily: FA5Icons,
+        IconName: "list-ul",
+        text: "Agenda", 
         navigateTo: "BuyTicket",
-        navigation: "test"
     },
     {
-        Icon: MCIcons,
-        text: "Comprar passagem", 
-        navigateTo: "BuyTicket",
-        navigation: "test"
+        IconFamily: MIIcons,
+        IconName: 'person-add-alt',
+        text: "Adicionar cliente", 
+        navigateTo: "MyTickets",
     },
     {
-        Icon: MCIcons,
-        text: "Comprar passagem", 
+        IconFamily: FA5Icons,
+        IconName: 'box',
+        text: "Adicionar encomenda", 
         navigateTo: "BuyTicket",
-        navigation: "test"
+    },
+    {//segunda linha
+        IconFamily: MIIcons,
+        IconName: "airport-shuttle",
+        text: "Adicionar frete", 
+        navigateTo: "BuyTicket",
     },
     {
-        Icon: MCIcons,
-        text: "Comprar passagem", 
+        IconFamily: MIIcons,
+        IconName: "app-registration",
+        text: "Registros", 
         navigateTo: "BuyTicket",
-        navigation: "test"
     },
     {
-        Icon: MCIcons,
-        text: "Comprar passagem", 
+        IconFamily: MIIcons,
+        IconName: "account-circle",
+        text: "Perfil", 
         navigateTo: "BuyTicket",
-        navigation: "test"
+    },
+    {//terceira linha
+        IconFamily: MIIcons,
+        IconName: "history",
+        text: "Histórico de clientes", 
+        navigateTo: "BuyTicket",
     },
     {
-        Icon: MCIcons,
-        text: "Comprar passagem", 
+        IconFamily: MIIcons,
+        IconName: "currency-exchange",
+        text: "Histórico de caixa", 
         navigateTo: "BuyTicket",
-        navigation: "test"
     },
     {
-        Icon: MCIcons,
-        text: "Comprar passagem", 
+        IconFamily: MIIcons,
+        IconName: "sell",
+        text: "Cadastrar Promoção", 
         navigateTo: "BuyTicket",
-        navigation: "test"
-    },
-    {
-        Icon: MCIcons,
-        text: "Comprar passagem", 
-        navigateTo: "BuyTicket",
-        navigation: "test"
-    },
-    {
-        Icon: MCIcons,
-        text: "Comprar passagem", 
-        navigateTo: "BuyTicket",
-        navigation: "test"
     },
 ]

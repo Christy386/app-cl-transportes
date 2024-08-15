@@ -1,22 +1,31 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+
+import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import IconButton from '../../components/iconButton';
+
 import homeClientData from './homeClientData';
+
 
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.bContainer}>
-        {homeClientData.map((buttonData, i) => (
-          <IconButton 
+        {homeClientData.map((buttonData, i)=> {
+          //console.log(buttonData);
+          return(
+            <IconButton 
             key={i}
-            Icon={buttonData.Icon}
+            IconFamily={buttonData.Icon}
+            IconName={buttonData.IconName}
             text={buttonData.text}
             navigateTo={buttonData.navigateTo}
             navigation={navigation}
-            style={styles.iconButton} // Apply the custom style
-          />
-        ))}
+            />
+          )
+        })}
       </View>
+      
     </View>
   );
 }
@@ -29,16 +38,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   bContainer: {
-    flex: 1,
     backgroundColor: '#fff',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
     alignItems: 'center',
-  },
-  iconButton: {
-    width: '30%',
-    aspectRatio: 1,
-    margin: 10,
+    justifyContent: 'space-evenly',
+    flexDirection: 'row',
+    flexWrap: 'wrap'
   },
 });

@@ -2,55 +2,55 @@ import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default data = [
     {
-        Icon: MCIcons,
+        IconFamily: MCIcons,
         text: "Comprar passagem", 
         navigateTo: "BuyTicket",
         navigation: "test"
     },
     {
-        Icon: MCIcons,
+        IconFamily: MCIcons,
         text: "Comprar passagem", 
         navigateTo: "BuyTicket",
         navigation: "test"
     },
     {
-        Icon: MCIcons,
+        IconFamily: MCIcons,
         text: "Comprar passagem", 
         navigateTo: "BuyTicket",
         navigation: "test"
     },
     {
-        Icon: MCIcons,
+        IconFamily: MCIcons,
         text: "Comprar passagem", 
         navigateTo: "BuyTicket",
         navigation: "test"
     },
     {
-        Icon: MCIcons,
+        IconFamily: MCIcons,
         text: "Comprar passagem", 
         navigateTo: "BuyTicket",
         navigation: "test"
     },
     {
-        Icon: MCIcons,
+        IconFamily: MCIcons,
         text: "Comprar passagem", 
         navigateTo: "BuyTicket",
         navigation: "test"
     },
     {
-        Icon: MCIcons,
+        IconFamily: MCIcons,
         text: "Comprar passagem", 
         navigateTo: "BuyTicket",
         navigation: "test"
     },
     {
-        Icon: MCIcons,
+        IconFamily: MCIcons,
         text: "Comprar passagem", 
         navigateTo: "BuyTicket",
         navigation: "test"
     },
     {
-        Icon: MCIcons,
+        IconFamily: MCIcons,
         text: "Comprar passagem", 
         navigateTo: "BuyTicket",
         navigation: "test"

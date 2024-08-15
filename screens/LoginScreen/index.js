@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { View, TextInput, TouchableOpacity, Text, Animated } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text, Image, Animated } from 'react-native';
 import Checkbox from 'expo-checkbox';
 import { FontAwesome } from '@expo/vector-icons';
 
-import Logo from './../../assets/Logo.svg';
+import Logo from './../../assets/Logo.svg'
 import { styles } from './Styles';
 
 export default function LoginScreen({ navigation }) {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showIcon, setShowIcon] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
@@ -17,11 +17,11 @@ export default function LoginScreen({ navigation }) {
     if (username === 'client' && password === 'client'){
       navigation.navigate('Home');
     } else if(username === 'admin' && password === 'admin'){
-      //navigation.navigate('Admin');
+      navigation.navigate('Admin');
     } else {
       return;
     }
-    console.log('Remember Me:', rememberMe);
+    
   };
 
   const handleRegister = ()=>{
@@ -29,8 +29,27 @@ export default function LoginScreen({ navigation }) {
     //navigation.navigate('Register');
   };
 
+  const handleInputFocus = () => {
+    setShowIcon(true);
+    startIconAnimation();
+  };
+
+  const handleInputBlur = () => {
+    if (!username) {
+      setShowIcon(false);
+    }
+  };
+
   const handleInputChange = (text) => {
     setUsername(text);
+  };
+
+  const startIconAnimation = () => {
+    Animated.timing(iconAnimation, {
+      toValue: 1,
+      duration: 500,
+      useNativeDriver: false
+    }).start();
   };
 
   return (
@@ -41,43 +60,47 @@ export default function LoginScreen({ navigation }) {
         </View>
         <View style={styles.inputContainer}>
           <TextInput 
-            placeholder={"Username"} 
+            placeholder={showIcon ? "" : "Username"} 
             value={username} 
             onChangeText={handleInputChange} 
             style={styles.input} 
+            onFocus={handleInputFocus} 
+            onBlur={handleInputBlur}
           />
-          <FontAwesome style={styles.icon} name="user-circle" size={24} color="#9e9e9e" />
+          {showIcon && (
+            <Animated.View 
+              style={[styles.icon, { 
+                opacity: iconAnimation, 
+                transform: [{ translateX: iconAnimation.interpolate({ inputRange: [0, 1], outputRange: [50, 0] }) }] 
+              }]}>
+              <FontAwesome name="user-circle" size={24} color="#9e9e9e" />
+            </Animated.View>
+          )}
         </View>
-        <View style={styles.inputContainer}>
-          <TextInput 
-            placeholder="Password" 
-            secureTextEntry={!showPassword} 
-            value={password} 
-            onChangeText={setPassword} 
-            style={[styles.input, { paddingRight: 40 }]} 
-          />
-          <TouchableOpacity 
-            style={styles.eyeIcon} 
-            onPress={() => setShowPassword(!showPassword)}
-          >
-            <FontAwesome 
-              name={showPassword ? "eye" : "eye-slash"} 
-              size={24} 
-              color="#9e9e9e" 
-            />
-          </TouchableOpacity>
-        </View>
+        <TextInput placeholder="Password" secureTextEntry={true} value={password} onChangeText={setPassword} style={styles.input} />
         <View style={styles.checkboxContainer}>
           <Checkbox value={rememberMe} onValueChange={setRememberMe} tintColor="red"/>
           <Text style={styles.checkboxText}>Keep me logged in</Text>
         </View>
         <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-          <Text style={{ color: '#fff', textAlign: 'center', fontSize:18, }}>Login</Text>
+          <Text style={{ color: '#fff', textAlign: 'center', fontSize:18, }}>
+            Login
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('Admin')}>
+          <Text style={{ color: '#fff', textAlign: 'center', fontSize:18, }}>
+            Admin Screen
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('Home')}>
+          <Text style={{ color: '#fff', textAlign: 'center', fontSize:18, }}>
+            Client Screen
+          </Text>
         </TouchableOpacity>
       </View>
       <Text style={styles.registerText}>
         No account yet? 
-        <Text onPress={handleRegister} style={{color:"#00f", }}> Register here.</Text>
+        <Text onPress={handleRegister} style={{color:"#00f", }}>Register here.</Text>
       </Text>
     </View>
   );
