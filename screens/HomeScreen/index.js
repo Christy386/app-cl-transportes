@@ -1,9 +1,7 @@
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import IconButton from '../../components/iconButton';
-
 import homeClientData from './homeClientData';
 
 
