@@ -14,7 +14,7 @@ export default data = [
         IconFamily: MIIcons,
         IconName: 'person-add-alt',
         text: "Adicionar cliente", 
-        navigateTo: "BuyTicket",
+        navigateTo: "MyTickets",
     },
     {
         IconFamily: FA5Icons,
