@@ -17,6 +17,7 @@ import BuyTicketScreen from './screens/BuyTicketScreen';
 import LoginScreen from './screens/LoginScreen';
 import TicketsScreen from './screens/MyTicketsScreen';
 import AddClientsScreen from './screens/AddClientsScreen';
+import AddTicketsScreen from './screens/AddTicketsScreen';
 import ClientsListScreen from './screens/ClientsListScreen'
 
 const Stack = createNativeStackNavigator();
@@ -39,6 +40,7 @@ function ClientsStackScreen() {
     <ClientStack.Navigator>
       <ClientStack.Screen name="ClientsTab" component={ClientsTabScreen} />
       <ClientStack.Screen name="AddClients" component={AddClientsScreen} />
+      <ClientStack.Screen name="AddTickets" component={AddTicketsScreen} />
       <ClientStack.Screen name="ClientsList" component={ClientsListScreen} />
       <ClientStack.Screen name="Tickets" component={TicketsScreen} />
     </ClientStack.Navigator>

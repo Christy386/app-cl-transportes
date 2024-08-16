@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default function AgendaScreen({ navigation }) {
+export default function AddClientsScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>test</Text>      
+      <Text>AddClientsScreen</Text>      
     </View>
   );
 }
